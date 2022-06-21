@@ -30,12 +30,8 @@ class Book extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['book_id', 'title'], 'required'],
-            [['description'], 'string'],
-            [['is_available', 'created_at', 'update_at'], 'integer'],
-            [['book_id'], 'string', 'max' => 16],
-            [['title'], 'string', 'max' => 512],
-            [['book_id'], 'unique'],
+            [['release_year', 'is_available_for_loan'], 'integer'],
+            [['name', 'author'], 'string', 'max' => 255],
         ];
     }
 
@@ -45,12 +41,11 @@ class Book extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'book_id' => 'Book ID',
-            'title' => 'Title',
-            'description' => 'Description',
-            'is_available' => 'Is Available',
-            'created_at' => 'Created At',
-            'update_at' => 'Update At',
+            'id' => 'ID',
+            'name' => 'Name',
+            'author' => 'Author',
+            'release_year' => 'Release Year',
+            'is_available_for_loan' => 'Is Available For Loan',
         ];
     }
 
