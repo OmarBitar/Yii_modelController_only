@@ -16,11 +16,16 @@ class m220621_082613_create_book_table extends Migration
     public function safeUp()
     {
         $this->createTable('{{%book}}', [
-            'id' => $this->primaryKey(),
             'book_id' => $this->string(16)->notNull(),
             'title' => $this->string(512)->notNull(),
             'description' => $this->text(),
+            'is_available' => $this->boolean(),
+            'created_at' => $this->integer(11),
+            'update_at' => $this->integer(11)
         ]);
+
+        // $this->addPrimaryKey(name, tableName, columns)
+        $this->addPrimaryKey('PK_book_id', '{{%book}}', 'book_id');
     }
 
     /**
