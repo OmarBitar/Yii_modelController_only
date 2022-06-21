@@ -3,16 +3,16 @@
 use yii\db\Migration;
 
 /**
- * Handles the creation of table `{{%memeber}}`.
+ * Handles the creation of table `{{%member}}`.
  */
-class m220621_123755_create_memeber_table extends Migration
+class m210331_100644_create_member_table extends Migration
 {
     /**
      * {@inheritdoc}
      */
     public function safeUp()
     {
-        $this->createTable('{{%memeber}}', [
+        $this->createTable('member', [
             'id' => $this->primaryKey(),
             'name' => $this->string()->notNull(),
             'started_on' => $this->dateTime()->defaultValue(date('Y-m-d H:i:s'))
@@ -24,6 +24,6 @@ class m220621_123755_create_memeber_table extends Migration
      */
     public function safeDown()
     {
-        $this->dropTable('{{%memeber}}');
+        $this->dropTable('{{%member}}');
     }
 }

@@ -5,17 +5,19 @@ use yii\db\Migration;
 /**
  * Handles the creation of table `{{%loan}}`.
  */
-class m220621_123833_create_loan_table extends Migration
+class m210331_100711_create_loan_table extends Migration
 {
+    /**
+     * {@inheritdoc}
+     */
     public function safeUp()
     {
         $this->createTable('loan', [
             'id' => $this->primaryKey(),
             'book_id' => $this->integer(),
             'borrower_id' => $this->integer(),
-            'borrowed_on' => $this->dateTime()
-                ->defaultValue(date('Y-m-d H:i:s')),
-            'to_be_returned_on' => $this->dateTime(),
+            'borrowed_on' => $this->dateTime()->defaultValue(date('Y-m-d H:i:s')),
+            'to_be_returned_on' => $this->dateTime()
         ]);
 
         // create index for column `book_id`
@@ -26,14 +28,13 @@ class m220621_123833_create_loan_table extends Migration
         );
 
         // add foreign key for table `post`
-        // $this->addForeignKey(name, tableName, columns, refTable, refColumns, delete, update);
         $this->addForeignKey(
-            'fk-loan-book_id', //name
-            'loan', //tableName
-            'book_id', //columns
-            'book', //refTable
-            'id', //refColumns
-            'CASCADE' //delete
+            'fk-loan-book_id',
+            'loan',
+            'book_id',
+            'book',
+            'id',
+            'CASCADE'
         );
 
         // create index for column `borrower_id`
@@ -54,13 +55,11 @@ class m220621_123833_create_loan_table extends Migration
         );
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function safeDown()
     {
-        $this->dropForeignKey('fk-loan-borrower_id', 'loan');
-        $this->dropIndex('idx-loan-borrower_id', 'loan');
-        $this->dropForeignKey('fk-loan-book_id', 'loan');
-        $this->dropIndex('idx-loan-book_id', 'loan');
-        $this->dropTable('loan');
+        $this->dropTable('{{%loan}}');
     }
-
 }
