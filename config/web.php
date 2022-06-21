@@ -48,7 +48,10 @@ $config = [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            // make sure to set pluralize to false if you wish to use 'book' instead of 'books' in URL
+            // https://stackoverflow.com/a/34076499/11379938
             'rules' => [
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'book', 'pluralize'=>false],
             ],
         ],
     ],
