@@ -1,26 +1,9 @@
 <?php
-
+// documentation for rest only controller 
+// https://www.yiiframework.com/doc/guide/2.0/en/rest-quick-start#creating-controller
 namespace app\controllers;
-use yii\web\Controller;
 
-class BookController extends Controller
-/*
-since name of class is 'BookController'
-then the id is going to be book; which is derived
-from the class name
-alternativley;
-if class name is 'MyBookController' then id 
-will be: my-book
-*/
+class BookController extends \yii\rest\ActiveController
 {
-    public function actionIndex()
-    /*
-    id is 'index'
-    alternativley if class name is 'actionMyIndex';
-    then id is 'my-index'
-    */
-    {
-        return 'hello world';
-    }
-
+    public $modelClass = 'app\models\Book';
 }
