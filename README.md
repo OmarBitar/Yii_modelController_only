@@ -1,3 +1,11 @@
+<h1>
+    a great tut to follow for created this app: https://www.twilio.com/blog/build-restful-api-php-yii2 
+</h1>
+<ul>
+    <li>offical getting started: https://www.yiiframework.com/doc/guide/2.0/en/start-installation</li>
+    <li>migrations: https://www.yiiframework.com/doc/guide/2.0/en/db-migrations</li>
+    <li>adjusting migrations: https://www.yiiframework.com/doc/guide/2.0/en/db-dao#database-schema</li>
+</ul>
 <p align="center">
     <a href="https://github.com/yiisoft" target="_blank">
         <img src="https://avatars0.githubusercontent.com/u/993323" height="100px">
