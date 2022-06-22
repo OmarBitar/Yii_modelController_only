@@ -57,4 +57,9 @@ class Book extends \yii\db\ActiveRecord
     {
         return new BookQuery(get_called_class());
     }
+    public function markAsBorrowed()
+    {
+        $this->is_available_for_loan = (int) false;
+        $this->save();
+    }
 }
