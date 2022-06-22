@@ -53,6 +53,8 @@ $config = [
             'rules' => [
                 ['class' => 'yii\rest\UrlRule', 'controller' => 'member'],
                 ['class' => 'yii\rest\UrlRule', 'controller' => 'book', 'pluralize'=>false],
+                'GET loans' => 'loan/index', // points to 'actionIndex()' in LoanController
+                'POST loans' => 'loan/borrow'// points to 'actionBorrow()' in LoanController
             ],
         ],
     ],
