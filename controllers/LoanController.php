@@ -10,6 +10,20 @@ class LoanController extends \yii\web\Controller
 {
     public $enableCsrfValidation = false;
     
+    public function behaviors()
+    {
+        return [
+            'verbs' => [
+                'class' => \yii\filters\VerbFilter::class,
+                'actions' => [
+                    'index'  => ['GET'],
+                    'view'  => ['GET'],
+                    'borrow'  => ['POST'],
+                ],
+            ],
+        ];
+    }
+
     public function actionIndex()
     {
         $loans = Loan::find()->all();

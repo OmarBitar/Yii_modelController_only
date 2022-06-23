@@ -7,6 +7,7 @@
     <li>adjusting migrations: https://www.yiiframework.com/doc/guide/2.0/en/db-dao#database-schema</li>
     <li>validation:https://www.yiiframework.com/doc/guide/2.0/en/input-validation</li>
     <li>validators:https://www.yiiframework.com/doc/guide/2.0/en/tutorial-core-validators#core-validators</li>
+    <li>verbfilters:https://www.yiiframework.com/doc/api/2.0/yii-filters-verbfilter</li>
 </ul>
 <p align="center">
     <a href="https://github.com/yiisoft" target="_blank">
