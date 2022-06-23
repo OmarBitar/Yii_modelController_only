@@ -45,16 +45,20 @@ $config = [
             ],
         ],
         'db' => $db,
+        // routing w/ urlManager docs: https://www.yiiframework.com/doc/guide/2.0/en/runtime-routing#url-formats
         'urlManager' => [
-            'enablePrettyUrl' => true,
+            'enablePrettyUrl' => false,
+            // since line above is disabled. URL looks like this: /index.php?r=book
             'showScriptName' => false,
             // make sure to set pluralize to false if you wish to use 'book' instead of 'books' in URL
             // https://stackoverflow.com/a/34076499/11379938
             'rules' => [
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'member'],
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'book', 'pluralize'=>false],
-                'GET loans' => 'loan/index', // points to 'actionIndex()' in LoanController
-                'POST loans' => 'loan/borrow'// points to 'actionBorrow()' in LoanController
+                // ['class' => 'yii\rest\UrlRule', 'controller' => 'member'],
+                // ['class' => 'yii\rest\UrlRule', 'controller' => 'book', 'pluralize'=>false],
+                // 'GET loans' => 'loan/index', // points to 'actionIndex()' in LoanController
+                // 'POST loans' => 'loan/borrow'// points to 'actionBorrow()' in LoanController
+                // so now post will look as follows: 
+                // URL: http://localhost:8080/index?r=loan/borrow
             ],
         ],
     ],
