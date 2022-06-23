@@ -6,21 +6,16 @@ use app\models\Book;
 use app\models\Loan;
 use app\models\Member;
 
-class LoanController extends \yii\web\Controller
+class LoanController extends \yii\rest\Controller
 {
     public $enableCsrfValidation = false;
     
-    public function behaviors()
+    protected function verbs()
     {
         return [
-            'verbs' => [
-                'class' => \yii\filters\VerbFilter::class,
-                'actions' => [
-                    'index'  => ['GET'],
-                    'view'  => ['GET'],
-                    'borrow'  => ['POST'],
-                ],
-            ],
+            'index'  => ['GET'],
+            'view'  => ['GET'],
+            'borrow'  => ['POST'],
         ];
     }
 
