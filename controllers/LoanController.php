@@ -17,6 +17,11 @@ class LoanController extends \yii\web\Controller
         return $this->asJson($loans);
     }
 
+    public function actionView($id) 
+    {
+        return $this->asJson(Loan::find()->where(['id'=>$id])->one());
+    }
+
     private function errorResponse($message)
     {
                 
