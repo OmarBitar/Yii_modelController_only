@@ -5,6 +5,8 @@
     <li>offical getting started: https://www.yiiframework.com/doc/guide/2.0/en/start-installation</li>
     <li>migrations: https://www.yiiframework.com/doc/guide/2.0/en/db-migrations</li>
     <li>adjusting migrations: https://www.yiiframework.com/doc/guide/2.0/en/db-dao#database-schema</li>
+    <li>validation:https://www.yiiframework.com/doc/guide/2.0/en/input-validation</li>
+    <li>validators:https://www.yiiframework.com/doc/guide/2.0/en/tutorial-core-validators#core-validators</li>
 </ul>
 <p align="center">
     <a href="https://github.com/yiisoft" target="_blank">

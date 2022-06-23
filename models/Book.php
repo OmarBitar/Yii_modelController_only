@@ -32,6 +32,8 @@ class Book extends \yii\db\ActiveRecord
         return [
             [['release_year', 'is_available_for_loan'], 'integer'],
             [['name', 'author'], 'string', 'max' => 255],
+            ['name','required', 'message' => 'must have a book name/title.'],
+            ['name','unique']
         ];
     }
 
