@@ -5,6 +5,9 @@ namespace app\controllers;
 use app\models\Book;
 use app\models\Loan;
 use app\models\Member;
+use yii\filters\AccessControl;
+use yii\filters\auth\CompositeAuth;
+use yii\filters\auth\HttpBearerAuth;
 
 class LoanController extends \yii\rest\Controller
 {
@@ -16,6 +19,19 @@ class LoanController extends \yii\rest\Controller
             'index'  => ['GET'],
             'view'  => ['GET'],
             'borrow'  => ['POST'],
+        ];
+    }
+
+    public function behaviors()
+    {
+        return [
+            $behaviors['authenticator'] = [
+                'class' => CompositeAuth::className(),
+                'except' => ['index'],
+                'authMethods' => [
+                    \yii\filters\auth\HttpBearerAuth::class,
+                ],
+            ]
         ];
     }
 
